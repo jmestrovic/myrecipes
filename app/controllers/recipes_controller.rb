@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new(recipe_params)
         @recipe.chef = Chef.first   # temporary, until we add chef CRUD actions
         if @recipe.save 
-            flash[:message] = "Recipe was create successfully!"
+            flash[:success] = "Recipe was create successfully!"
             redirect_to recipe_path(@recipe)
         else
             render 'new'
